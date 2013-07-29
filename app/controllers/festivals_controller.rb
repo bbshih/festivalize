@@ -1,4 +1,6 @@
 class FestivalsController < ApplicationController
+  before_filter :find_festival, only: [:show]
+
   def index
   end
 
@@ -18,6 +20,10 @@ class FestivalsController < ApplicationController
   end
 
   private
+  def find_festival
+    @festival = Festival.find(params[:id])
+  end
+
   def festival_params
     params.require(:festival).permit( :name, :date);
   end
