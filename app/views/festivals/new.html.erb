@@ -1,6 +1,2 @@
 <h1>Add a New Festival</h1>
-<%= semantic_form_for @festival do |f| %>
-  <%= f.input :name, label: "Festival Name" %>
-  <%= f.input :date, start_year: Time.now.year, end_year: 2.years.ago.year %>
-  <%= f.action :submit, label: "Add Festival", :button_html => { :disable_with => 'Wait...' } %>
-<% end %>
+<%= render "form" %>

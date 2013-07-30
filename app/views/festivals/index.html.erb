@@ -1,3 +1,8 @@
 <h1>Festivalize</h1>
-Plan our your festivals here
+Plan your festivals here!
 <%= link_to "Add New Festival", new_festival_path %>
+
+<% @festivals.each do |f| %>
+<br>
+<strong><%= link_to f.name, f %></strong> <%= f.date.to_s %>
+<% end %>

@@ -1,7 +1,8 @@
 class FestivalsController < ApplicationController
-  before_filter :find_festival, only: [:show]
+  before_filter :find_festival, only: [:show, :edit, :update]
 
   def index
+    @festivals = Festival.all
   end
 
   def new
@@ -12,6 +13,20 @@ class FestivalsController < ApplicationController
     @festival = Festival.create(festival_params)
     if @festival.save
       redirect_to @festival, notice: "Festival added"
+    end
+  end
+
+  def edit
+
+  end
+
+  def update
+    binding.pry
+    if @festival.update_attributes(festival_params)
+      redirect_to @festival, notice: "Changes saved"
+    else
+      flash[:alert] = "Changes failed to save"
+      render action: :edit
     end
   end
 
