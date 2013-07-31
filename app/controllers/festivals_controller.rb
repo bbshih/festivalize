@@ -21,7 +21,6 @@ class FestivalsController < ApplicationController
   end
 
   def update
-    binding.pry
     if @festival.update_attributes(festival_params)
       redirect_to @festival, notice: "Changes saved"
     else
@@ -40,6 +39,10 @@ class FestivalsController < ApplicationController
   end
 
   def festival_params
-    params.require(:festival).permit( :name, :date);
+    params.require(:festival).permit(:name, :date)
+  end
+
+  def flatten_date_array hash
+    %w(1 2 3).map { |e| hash["date(#{e}i)"].to_i }
   end
 end
