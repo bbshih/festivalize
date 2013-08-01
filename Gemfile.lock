@@ -65,8 +65,6 @@ GEM
       multi_json (~> 1.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
-    formtastic (2.2.1)
-      actionpack (>= 3.0)
     hike (1.2.3)
     i18n (0.6.4)
     jbuilder (1.4.2)
@@ -198,7 +196,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   email_spec
   factory_girl
-  formtastic
   jbuilder (~> 1.2)
   jquery-rails
   launchy

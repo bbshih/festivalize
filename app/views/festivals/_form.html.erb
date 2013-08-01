@@ -5,8 +5,13 @@
 </p>
 
 <p>
-  <%= f.label :date %><br>
-  <%= f.date_select :date %>
+  <%= f.label :startdate, "Start Time" %><br>
+  <%= f.datetime_select :startdate %>
+</p>
+
+<p>
+  <%= f.label :enddate, "End Time" %><br>
+  <%= f.datetime_select :enddate %>
 </p>
 
 <%= f.submit %>

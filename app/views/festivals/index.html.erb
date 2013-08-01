@@ -4,5 +4,5 @@ Plan your festivals here!
 
 <% @festivals.each do |f| %>
 <br>
-<strong><%= link_to f.name, f %></strong> <%= f.date.to_s %>
+<strong><%= link_to f.name, f %></strong> <%= f.startdate.to_s %> to <%= f.enddate.to_s %>
 <% end %>

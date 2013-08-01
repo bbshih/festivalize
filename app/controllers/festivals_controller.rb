@@ -13,6 +13,9 @@ class FestivalsController < ApplicationController
     @festival = Festival.create(festival_params)
     if @festival.save
       redirect_to @festival, notice: "Festival added"
+    else
+      flash[:alert] = "Changes failed to save"
+      render action: :new
     end
   end
 
@@ -39,7 +42,7 @@ class FestivalsController < ApplicationController
   end
 
   def festival_params
-    params.require(:festival).permit(:name, :date)
+    params.require(:festival).permit(:name, :startdate, :enddate)
   end
 
   def flatten_date_array hash
