@@ -10,5 +10,6 @@
 #
 
 class Festival < ActiveRecord::Base
+  has_one :stage
   validates :name, :startdate, :enddate, presence: true
 end
