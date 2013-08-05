@@ -3,3 +3,4 @@ Start: <%= @festival.startdate %><br>
 End: <%= @festival.enddate %><br>
 
 <%= link_to "Edit", edit_festival_path %>
+<%= link_to "Add stage", new_festival_stage_path(@festival) %>

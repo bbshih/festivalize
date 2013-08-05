@@ -4,9 +4,10 @@
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
-#  date       :date
+#  startdate  :datetime
 #  created_at :datetime
 #  updated_at :datetime
+#  enddate    :datetime
 #
 
 require 'spec_helper'

@@ -5,7 +5,9 @@ Festivalize::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'festivals#index'
 
-  resources :festivals
+  resources :festivals do
+    resources :stages
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

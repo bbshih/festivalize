@@ -4,12 +4,13 @@
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
-#  date       :date
+#  startdate  :datetime
 #  created_at :datetime
 #  updated_at :datetime
+#  enddate    :datetime
 #
 
 class Festival < ActiveRecord::Base
-  has_one :stage
+  has_many :stage
   validates :name, :startdate, :enddate, presence: true
 end
