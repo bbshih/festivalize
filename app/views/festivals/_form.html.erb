@@ -14,5 +14,11 @@
   <%= f.datetime_select :enddate %>
 </p>
 
+<%= f.fields_for :stages do |s| %>
+  <fieldset>
+    <%= s.label :name %>
+    <%= s.text_area :name %>
+  </fieldset>
+<% end %>
 <%= f.submit %>
 <% end %>

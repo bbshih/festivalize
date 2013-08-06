@@ -11,6 +11,7 @@
 #
 
 class Festival < ActiveRecord::Base
-  has_many :stage
+  has_many :stages
   validates :name, :startdate, :enddate, presence: true
+  accepts_nested_attributes_for :stages
 end
