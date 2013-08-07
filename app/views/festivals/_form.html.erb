@@ -14,11 +14,14 @@
   <%= f.datetime_select :enddate %>
 </p>
 
-<%= f.fields_for :stages do |s| %>
-  <fieldset>
-    <%= s.label :name %>
-    <%= s.text_area :name %>
-  </fieldset>
+<div id="stages">
+<%= f.fields_for :stages do |stage| %>
+
+<%= render 'stage_fields', :f => stage %>
+<div class="links">
+<%= link_to_add_association 'Add Stage', f, :stages %>
+</div>
 <% end %>
+</div>
 <%= f.submit %>
 <% end %>

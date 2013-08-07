@@ -2,5 +2,13 @@
 Start: <%= @festival.startdate %><br>
 End: <%= @festival.enddate %><br>
 
+<% if @festival.stages.exists? %>
+  <h2>Stages:</h2>
+  <ul>
+  <% @festival.stages.each do |s| %>
+    <li><%= s.name %></li>
+  <% end %>
+  </ul>
+<% end %>
+
 <%= link_to "Edit", edit_festival_path %>
-<%= link_to "Add stage", new_festival_stage_path(@festival) %>

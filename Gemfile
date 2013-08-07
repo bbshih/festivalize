@@ -44,8 +44,9 @@ gem 'unicorn'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'rails_12factor', group: :production
+gem 'cocoon'
 
+gem 'rails_12factor', group: :production
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.11'

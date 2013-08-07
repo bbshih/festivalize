@@ -12,6 +12,8 @@
 
 class Festival < ActiveRecord::Base
   has_many :stages
+  accepts_nested_attributes_for :stages, allow_destroy: true, reject_if: :all_blank
+
   validates :name, :startdate, :enddate, presence: true
-  accepts_nested_attributes_for :stages
+
 end

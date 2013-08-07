@@ -7,6 +7,7 @@ class FestivalsController < ApplicationController
 
   def new
     @festival = Festival.new
+    @festival.stages.build
   end
 
   def create
@@ -42,7 +43,7 @@ class FestivalsController < ApplicationController
   end
 
   def festival_params
-    params.require(:festival).permit(:name, :startdate, :enddate)
+    params.require(:festival).permit(:name, :startdate, :enddate, stages_attributes: [:id, :name])
   end
 
   def flatten_date_array hash

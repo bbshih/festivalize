@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20130804022120) do
 
   create_table "stages", force: true do |t|
     t.string   "name"
+    t.integer  "festival_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "festivals_id"
